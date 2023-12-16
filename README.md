@@ -1,16 +1,18 @@
 # vue-map-using-leaflet
 
-This template should help get you started developing with Vue 3 in Vite.
+![image](https://github.com/smhabibjr/vue-map-using-leaflet/assets/77357735/78974fa3-b368-445b-a989-999f5829e1f4)
 
-## Recommended IDE Setup
+Implement an interactive map in the Vue JS 3 or Quasar framework App using leaflet.js and the Leaflet Marker Cluster package.
+
+### Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+### Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+### Project Setup
 
 ```sh
 npm install
