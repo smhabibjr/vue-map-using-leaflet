@@ -13,8 +13,20 @@ import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import "leaflet.markercluster";
 import { addressPoints } from './markerDemo'
+import icon from './icon.png'
+import markerShadow from './marker-shadow.png'
 
 const initialMap = ref(null);
+
+const myIcon = L.icon({
+    iconUrl: icon,
+    iconSize: [30, 30],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowUrl: markerShadow,
+    shadowSize: [60, 30],
+    shadowAnchor: [22, 94]
+});
 
 onMounted(()=> {
     initialMap.value = L.map('map', {zoomControl: true,zoom:1,zoomAnimation:false,fadeAnimation:true,markerZoomAnimation:true}).setView([23.8041, 90.4152], 6);
@@ -23,14 +35,14 @@ onMounted(()=> {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(initialMap.value);
 
-    L.marker([24.3746, 88.6004]).addTo(initialMap.value)
-    L.marker([22.3752, 91.8349]).addTo(initialMap.value)
+    L.marker([24.3746, 88.6004], {icon: myIcon}).addTo(initialMap.value);
+    L.marker([22.3752, 91.8349], {icon: myIcon}).addTo(initialMap.value);
 
     const markers = L.markerClusterGroup();
 
     addressPoints.forEach((element, index) => {
         markers
-        .addLayer(L.marker([element.latitude, element.longitude])
+        .addLayer(L.marker([element.latitude, element.longitude], {icon: myIcon})
         .bindPopup(`<strong> Hello Bangladesh! </strong> <br> I am a popup.`));
     });
 
