@@ -41,9 +41,10 @@ onMounted(()=> {
     const markers = L.markerClusterGroup();
 
     addressPoints.forEach((element, index) => {
-        markers
-        .addLayer(L.marker([element.latitude, element.longitude], {icon: myIcon})
-        .bindPopup(`<strong> Hello Bangladesh! </strong> <br> I am a popup.`));
+        const each_marker = new L.marker(
+            [element.latitude, element.longitude], {icon: myIcon})
+            .bindPopup(`<strong> Hello Bangladesh! </strong> <br> I am a popup number ${index}`);
+        markers.addLayer(each_marker);
     });
 
     initialMap.value.addLayer(markers);
